@@ -2,7 +2,6 @@ import { subscribeToHellfireClube } from './data/hellfire-clube.js'
 
 (function main() {
     const txtName = document.getElementById('txtName')
-    console.log(txtName)
     const txtEmail = document.getElementById('txtEmail')
     const txtLevel = document.getElementById('txtLevel')
     const txtCharacter = document.getElementById('txtCharacter')
@@ -17,6 +16,13 @@ import { subscribeToHellfireClube } from './data/hellfire-clube.js'
         
         // Salvar no banco de dados!
         const id = await subscribeToHellfireClube(subscribe)
+
+        txtName = ''
+        txtEmail = ''
+        txtLevel = ''
+        
+        txtCharacter = ''
         alert(`Inscrição ${id} adicionada com sucesso!`)
+
     })
 })()
